@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { TransactionsModule } from './transactions/transactions.module';
+import { RechargesModule } from './recharges/recharges.module';
 
 @Module({
   imports: [
@@ -10,7 +12,7 @@ import { UsersModule } from './users/users.module';
       isGlobal: true
     }),
     AuthModule, 
-    UsersModule
+    UsersModule, TransactionsModule, RechargesModule
   ],
   controllers: [],
   providers: [],
