@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, HttpStatus, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, Request, UseGuards } from '@nestjs/common';
 
 import { AuthGuard } from 'src/auth/auth.guard';
 
@@ -12,14 +12,13 @@ export class RechargesController {
   @UseGuards(AuthGuard)
   @HttpCode(HttpStatus.OK)
   @Post('buy')
-  async createRecharge(
-    @Request() req: any,
-    @Body() createRechargeDto: CreateRechargeDto
-  ): Promise<any> {   
-    return this.rechargesService.create(
-      req.user.username,
-      createRechargeDto.amount,
-      createRechargeDto.phoneNumber
-    )
+  async createRecharge(@Request() req: any, @Body() createRechargeDto: CreateRechargeDto): Promise<any> {
+    return this.rechargesService.create(req.user.username, createRechargeDto.amount, createRechargeDto.phoneNumber);
+  }
+
+  @UseGuards(AuthGuard)
+  @Get('history')
+  async findRecharges(@Request() req: any): Promise<any> {
+    return this.rechargesService.findByUser(req.user.username);
   }
 }

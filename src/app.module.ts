@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
@@ -11,10 +12,17 @@ import { RechargesModule } from './recharges/recharges.module';
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    AuthModule, 
-    UsersModule, TransactionsModule, RechargesModule
+    TypeOrmModule.forRoot({
+      type: 'sqlite',
+      database: 'database.sqlite',
+      autoLoadEntities: true
+    }),
+    AuthModule,
+    UsersModule,
+    TransactionsModule,
+    RechargesModule
   ],
   controllers: [],
-  providers: [],
+  providers: []
 })
 export class AppModule {}
