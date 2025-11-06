@@ -16,4 +16,8 @@ describe('UsersService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should return undefined when the username is \'pruebas\'', () => {
+    expect(service.findUser('test')).toBeUndefined();
+  });
 });

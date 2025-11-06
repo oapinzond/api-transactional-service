@@ -2,8 +2,8 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { TransactionsService } from 'src/transactions/transactions.service';
-import { Transaction } from 'src/transactions/entities/transaction.entity';
+import { TransactionsService } from '../transactions/transactions.service';
+import { Transaction } from '../transactions/entities/transaction.entity';
 
 import { Recharge } from './entities/recharge.entity';
 

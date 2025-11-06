@@ -1,6 +1,6 @@
 import { Column, Entity, OneToOne, PrimaryColumn } from 'typeorm';
 
-import { Recharge } from 'src/recharges/entities/recharge.entity';
+import { Recharge } from '../../recharges/entities/recharge.entity';
 
 @Entity('transactions')
 export class Transaction {
