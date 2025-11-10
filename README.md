@@ -68,7 +68,7 @@ test/
 - `sqlite3` Librería de SQLite para NodeJS
 - `typeorm` ORM de bases de datos para TypeScript
 
-## Ejecución <a name="run"></a>
+# Ejecución <a name="run"></a>
 
 ```bash
 # 1. Clonar el repositorio
@@ -103,7 +103,7 @@ curl --location "http://localhost:3000/recharges/history" \
 --header "Authorization: Bearer $TOKEN"
 ```
 
-## Pruebas <a name="test"></a>
+# Pruebas <a name="test"></a>
 
 - `npm run test` - Tests unitarios
 - `npm run test:e2e` - Tests de integración
